@@ -71,6 +71,14 @@ public class Level1calc_Collection {
                 } //이렇게 구현하고 확인해보니 지워지는게 이상했다. 그래서 인덱스를 당기는 과정없이 그냥 remove하니까 잘된다. remove를 쓰면자동으로 자리이동이된다.
                * */
             }
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String wannaInquiry=sc.next();
+
+            if(wannaInquiry.equals("inquiry")){
+                for (Integer resultt : results) {
+                    System.out.print(resultt);
+                }
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             continueOrNot=sc.next(); // exit을 입력 받으면 반복 종료되게 하기 위해 변수에 넣음
