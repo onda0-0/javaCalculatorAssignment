@@ -11,7 +11,7 @@ public class myApp {
     public static void main(String[] args) {
 
         /* Calculator 인스턴스 생성 */
-        Calculator calc=new Calculator();
+        myCalculator calc=new myCalculator();
         Scanner sc = new Scanner(System.in);
         String continueOrNot="";
         double result=0;

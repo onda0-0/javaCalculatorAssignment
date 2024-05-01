@@ -18,11 +18,9 @@ public class Calculator {
         this.results = new ArrayList<Double>();
     }*/
     public Calculator(List<Double> results) {
-        this.results = new ArrayList<>();
+        this.results =  results;
     }
 
-
-    Scanner sc = new Scanner(System.in);
 
     //1. 양의 정수 2개(0 포함)와 연산 기호를 매개변수로 받아 사칙연산(+,-,*,/) 기능을 수행한 후 결과 값을 반환하는 메서드
     public Double calculate(int num1, int num2, char operator) {
