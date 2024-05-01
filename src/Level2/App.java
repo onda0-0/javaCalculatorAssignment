@@ -10,7 +10,7 @@ public class App {
         /* Calculator 인스턴스 생성 */
         //Calculator calc=new Calculator();
         Scanner sc = new Scanner(System.in);
-        Calculator calc=new Calculator(new ArrayList<>());
+        Calculator calc=new Calculator(new ArrayList<>(),new ArrayList<>());
         String continueOrNot="";
 
 
@@ -50,6 +50,7 @@ public class App {
                 int radius = sc.nextInt();
 
                 double area = calc.calculateCircleArea(radius);
+                calc.getAreas().add(area);
 
                 System.out.println("반지름이 " + radius + "인 원의 넓이는 : " + area);
 

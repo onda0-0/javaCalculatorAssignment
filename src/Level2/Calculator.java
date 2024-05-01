@@ -7,18 +7,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
+    private static final double PI=3.14; //3.14는 절대변하지 않는 상수이기때문에 static, final로 만들었다.
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     //private List<Double> results= new ArrayList<Double>();
     private List<Double> results;
     //7.원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성
-    private List<Double> areas= new ArrayList<Double>();
+    //private List<Double> areas= new ArrayList<Double>();
+    private List<Double> areas;
 
     //6. calculator 인스턴스를 생성(new)할 때 생성자를 통해 연산 결과를 저장하고 있는 컬렉션 필드가 초기화 되도록 수정
     /*public Calculator() {
         this.results = new ArrayList<Double>();
     }*/
-    public Calculator(List<Double> results) {
+    public Calculator(List<Double> results,List<Double> areas) {
         this.results =  results;
+        this.areas=areas;
     }
 
 
