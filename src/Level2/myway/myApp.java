@@ -1,18 +1,20 @@
-package Level2;
-
-import java.util.ArrayList;
+package Level2.myway;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class App {
+import Level2.Calculator;
+import Level2.myway.myCalculator;
+
+
+
+public class myApp {
     public static void main(String[] args) {
 
         /* Calculator 인스턴스 생성 */
-        //Calculator calc=new Calculator();
+        Calculator calc=new Calculator();
         Scanner sc = new Scanner(System.in);
-        Calculator calc=new Calculator(new ArrayList<>());
         String continueOrNot="";
-
+        double result=0;
 
         while (!(continueOrNot.equals("exit"))) {
             System.out.println("어떤 계산을 하시겠습니가? (1: 사칙연산, 2: 원의 넚이)");
@@ -25,11 +27,6 @@ public class App {
                 int num2 = sc.nextInt();
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 char operator = sc.next().charAt(0);
-
-                double result=calc.calculate(num1,num2,operator);
-                //calc.results.add(result); -직접접근
-                calc.getResults().add(result);
-
 
                 //5.저장된 연산 결과들을 조회하는 기능을 가진 메서드 활용
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");

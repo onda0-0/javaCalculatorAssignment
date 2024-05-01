@@ -1,4 +1,4 @@
-package Level2;
+package Level2.myway;
 
 public class BadInputException extends Exception{
     public BadInputException(String type){

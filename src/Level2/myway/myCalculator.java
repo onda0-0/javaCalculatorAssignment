@@ -1,31 +1,34 @@
-package Level2;
-
-import Level2.myway.BadInputException;
+package Level2.myway;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import Level2.myway.BadInputException;
 
-public class Calculator {
+
+
+
+public class myCalculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    //private List<Double> results= new ArrayList<Double>();
-    private List<Double> results;
+    private List<Double> results= new ArrayList<Double>();
     //7.원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성
     private List<Double> areas= new ArrayList<Double>();
 
     //6. calculator 인스턴스를 생성(new)할 때 생성자를 통해 연산 결과를 저장하고 있는 컬렉션 필드가 초기화 되도록 수정
-    /*public Calculator() {
+    public myCalculator() {
         this.results = new ArrayList<Double>();
-    }*/
-    public Calculator(List<Double> results) {
-        this.results = new ArrayList<>();
     }
 
-
     Scanner sc = new Scanner(System.in);
-
+    // 나눗셈 메서드, 분모가 0일 때 예외 발생
+    public double divide(int num1, int num2) throws BadInputException {
+        if (num2 == 0) {
+            throw new BadInputException("분모가 0이 될 수 없으니, 분모에 0을 제외한 수"); // 분모가 0일 때 예외 발생
+        }
+        return num1 / num2; // 정상적인 나눗셈
+    }
     //1. 양의 정수 2개(0 포함)와 연산 기호를 매개변수로 받아 사칙연산(+,-,*,/) 기능을 수행한 후 결과 값을 반환하는 메서드
-    public Double calculate(int num1, int num2, char operator) {
+    public Double calculate(int num1, int num2, char operator) throws BadInputException{
         double outcome=0;
 
         switch (operator){
@@ -39,14 +42,10 @@ public class Calculator {
                 outcome = num1 * num2;
                 return outcome;
             case '/':
-                if(num2!=0){
-                    outcome=num1/num2;
-                }else{
-                    throw new ArithmeticException("나눗셈연산에서 분모에 0이 입력될수 없습니다.");
-                }
-                break;
+                return divide(num1,num2);
             default:
-                throw new UnsupportedOperationException("올바른 선택이 아닙니다");
+                throw new BadInputException("+,-,/,*중 하나");
+
         }
 
         /*double outcome=0;
@@ -59,8 +58,8 @@ public class Calculator {
             outcome = num1 * num2;
         }else if(operator=='/'){
             outcome = num1 / num2;
-        }*/
-        return outcome;
+        }
+        return outcome;*/
     }
 
     //5.저장된 연산 결과들을 조회하는 기능을 가진 메서드
@@ -77,16 +76,17 @@ public class Calculator {
 
     //3. getter
     public List<Double> getResults(){
-            return results;
+        return results;
     }
 
     //3. setter
     public void setResults(List<Double> results){
         this.results=results;
     }
-   /* public void addResults(Double result){
+
+    public void addResults(Double result){
         this.results.add(result);
-    }*/
+    }
 
 
     //7.반지름을 매개변수로 전달받아 원의 넓이를 계산하여 반환해주는 메서드를 구현
