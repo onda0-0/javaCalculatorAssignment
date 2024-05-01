@@ -101,7 +101,7 @@ public class Calculator {
         this.areas=areas;
     }
 
-    //5.저장된 연산 결과들을 조회하는 기능을 가진 메서드
+    //5.저장된 원 연산 결과들을 조회하는 기능을 가진 메서드
     public void inquiryAreas() {
         for (double areasItems : areas) {
             System.out.print(areasItems);
